@@ -1,0 +1,9 @@
+[package]
+name = "alpha-test"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pixels = { git = "https://github.com/parasyte/pixels.git" }
+png = "0.17"
+winit = "0.26"
