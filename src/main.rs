@@ -117,10 +117,13 @@ impl World {
 
         self.intensity = intensity;
 
+        // Intensity is a linear value. `powf()` transforms it into the non-linear sRGB space.
+        intensity = intensity.powf(2.2);
+
         wgpu::Color {
-            r: intensity.powf(2.2),
-            g: intensity.powf(2.2),
-            b: intensity.powf(2.2),
+            r: intensity,
+            g: intensity,
+            b: intensity,
             a: 1.0,
         }
     }
