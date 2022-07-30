@@ -118,6 +118,9 @@ impl World {
         self.intensity = intensity;
 
         // Intensity is a linear value. `powf()` transforms it into the non-linear sRGB space.
+        // That's a lie! This is just an approximation. But good enough for this demo!
+        // Without this step, the animation would show a long cycle of bright shades,
+        // and a very quick cycle of dark shades.
         intensity = intensity.powf(2.2);
 
         wgpu::Color {
